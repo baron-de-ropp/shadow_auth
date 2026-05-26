@@ -1,0 +1,28 @@
+{% extends "shadow_auth/base.html" %}
+{% block title %}Log in{% endblock %}
+{% block body %}
+<h1>Log in</h1>
+
+{% if error %}
+  <p class="error">{{ error }}</p>
+{% endif %}
+
+<form method="post" action="{{ url_for('auth.login') }}">
+  {% if request.args.get('next') %}
+    <input type="hidden" name="next" value="{{ request.args.get('next') }}">
+  {% endif %}
+  <label>
+    Username or email
+    <input name="identifier" required autofocus autocomplete="username">
+  </label>
+  <label>
+    Password
+    <input name="password" type="password" required autocomplete="current-password">
+  </label>
+  <button type="submit">Log in</button>
+</form>
+
+<p class="muted">
+  Your login works across every site under thearcanelibrary.com.
+</p>
+{% endblock %}

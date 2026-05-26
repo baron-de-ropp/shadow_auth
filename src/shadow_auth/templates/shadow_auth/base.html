@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}shadow_auth{% endblock %}</title>
+  {% block head %}{% endblock %}
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 28rem; margin: 4rem auto; padding: 0 1rem; }
+    h1 { margin-bottom: 1.5rem; }
+    label { display: block; margin: 0.75rem 0; }
+    input { display: block; width: 100%; padding: 0.5rem; box-sizing: border-box; font-size: 1rem; }
+    button { padding: 0.6rem 1.2rem; font-size: 1rem; cursor: pointer; }
+    .error { color: #b00020; background: #fee; border: 1px solid #fcc; padding: 0.75rem; border-radius: 0.25rem; }
+    .muted { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  {% block body %}{% endblock %}
+</body>
+</html>

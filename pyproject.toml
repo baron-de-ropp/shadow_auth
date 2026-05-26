@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shadow_auth"
+version = "0.1.0"
+description = "Shared Flask-Login auth package for thearcanelibrary.com Flask apps"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Baron de Ropp" }]
+dependencies = [
+    "flask>=3.0",
+    "flask-login>=0.6",
+    "flask-sqlalchemy>=3.1",
+    "sqlalchemy>=2.0",
+    "werkzeug>=3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+shadow_auth = [
+    "templates/shadow_auth/*.html",
+    "migrations/*.py",
+]
+
+# -------------------- ruff --------------------
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+# -------------------- pytest --------------------
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"
