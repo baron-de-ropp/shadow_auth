@@ -6,10 +6,10 @@ SQLAlchemy `User` and `UserRole` models pointing at the existing
 `public.users` / `public.user_roles` tables, a preconfigured `LoginManager`,
 and an auth blueprint with login/logout routes.
 
-This is a **private** package. Install via SSH:
+Install directly from GitHub (public repo, no auth needed):
 
 ```
-pip install "shadow_auth @ git+ssh://git@github.com/baron-de-ropp/shadow_auth.git@v0.1.0"
+pip install "shadow_auth @ git+https://github.com/baron-de-ropp/shadow_auth.git@v0.1.0"
 ```
 
 ## Cross-subdomain SSO
